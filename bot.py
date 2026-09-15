@@ -55,7 +55,7 @@ async def ensure_voice(ctx: commands.Context) -> discord.VoiceClient:
 
     voice_client = ctx.guild.voice_client
     if voice_client is None:
-        return await author_voice.channel.connect()
+        return await author_voice.channel.connect(self_deaf=True)
     if voice_client.channel != author_voice.channel:
         await voice_client.move_to(author_voice.channel)
     return voice_client
