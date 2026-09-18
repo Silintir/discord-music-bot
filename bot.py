@@ -184,6 +184,15 @@ async def skip(ctx: commands.Context) -> None:
 
 
 @bot.command()
+@commands.guild_only()
+async def clear(ctx: commands.Context) -> None:
+    queued_tracks = queues[ctx.guild.id]
+    removed_count = len(queued_tracks)
+    queued_tracks.clear()
+    await ctx.send(f"Cleared **{removed_count}** queued track(s).")
+
+
+@bot.command()
 async def pause(ctx: commands.Context) -> None:
     if ctx.voice_client and ctx.voice_client.is_playing():
         ctx.voice_client.pause()

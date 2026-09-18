@@ -30,6 +30,7 @@ A small Discord bot that streams audio from a YouTube URL or search using
 - `!join` - join your current voice channel
 - `!play <URL or search>` - play a track or an entire YouTube playlist
 - `!skip` - skip to the next playlist track
+- `!clear` - clear pending tracks without stopping the current track
 - `!pause` - pause playback
 - `!resume` - resume playback
 - `!stop` - stop playback
